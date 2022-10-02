@@ -157,9 +157,10 @@ function confirma() {
             comecarEtapa();
         } else {
             document.querySelector('.tela').innerHTML = `<div class="aviso--gigante pisca">FIM</div>`;
-            ticket.style.display = "block";
+            ticket.innerHTML= `<span class="crg">Comprovante</span><br>;`
+
             for (let i = 0; i < votos.length; i++) {
-                Novoticket = `<div> ${votos[i].etapa} </div><hr> <div>Número: ${votos[i].voto}: </div><div>Nome: ${votos[i].nomeVoto}:</div> <br>`;
+                Novoticket = `<div>${votos[i].etapa}</div><div>Número: ${votos[i].voto}:</div><div>Nome: ${votos[i].nomeVoto}:</div><hr>`;
                 ticket.innerHTML += Novoticket;
             }
         }

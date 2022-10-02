@@ -160,11 +160,10 @@ body {
 
 
 .tickets{
-    display: none;
     background-color: rgb(252, 252, 165);
     width: 200px;
-    height: 324px;
-    font-size: 10px;
+    height: 325px;
+    font-size: 12px;
     text-align: left;
     padding: 30px;
 }
@@ -178,4 +177,8 @@ body {
     border-radius: 2px;
     cursor: pointer;
     margin-right: 3px;
+}
+.crg{
+    font-weight: bold;
+    text-decoration-line: underline;
 }

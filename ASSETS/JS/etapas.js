@@ -1,14 +1,14 @@
 let etapas = [
-    { //etapa de vereador com lista de candidatos
-        titulo: 'DEPUTADO',
+    { //etapa de DEPUTADO ESTADUAL com lista de candidatos
+        titulo: 'DEPUTADO ESTADUAL',
         digitos: 5,
         candidatos: [
             {
                 numeros: '38111',
-                nome: 'fulano de tal',
+                nome: 'Jose',
                 partido: 'ABC',
                 fotos: [
-                    { url: '38111.jpg', legenda: 'Vereador' }
+                    { url: '38111.jpg', legenda: 'Deputado estadual' }
                 ]
             },
             {
@@ -16,36 +16,112 @@ let etapas = [
                 nome: 'Beltrano da silva',
                 partido: 'DEFG',
                 fotos: [
-                    { url: '77222.jpg', legenda: 'Vereador' }
+                    { url: '77222.jpg', legenda: 'Deputado estadual' }
                 ]
             }
         ]
     },
 
-    { //etapa de prefeito com lista de candidatos
+    { //etapa de DEPUTADO FEDERAL com lista de candidatos
+        titulo: 'DEPUTADO FEDERAL',
+        digitos: 4,
+        candidatos: [
+            {
+                numeros: '4872',
+                nome: 'Fulano',
+                partido: 'BCA',
+                fotos: [
+                    { url: '99.jpg', legenda: 'Dep. Federal' },
+                ]
+            },
+            {
+                numeros: '7891',
+                nome: 'Carlos',
+                partido: 'XYZ',
+                fotos: [
+                    { url: '84.jpg', legenda: 'Dep. Federal' },
+                ]
+            }
+        ]
+    },
+
+
+    { //etapa de SENADOR com lista de candidatos
+        titulo: 'SENADOR',
+        digitos: 3,
+        candidatos: [
+            {
+                numeros: '456',
+                nome: 'Joca',
+                partido: 'OIP',
+                fotos: [
+                    { url: '99.jpg', legenda: 'senador' },
+                    
+                ]
+            },
+            {
+                numeros: '789',
+                nome: 'Afonso',
+                partido: 'LMP',
+                fotos: [
+                    { url: '84.jpg', legenda: 'senador' },
+                    
+                ]
+            }
+        ]
+    },
+
+
+    { //etapa de GOVERNADOR com lista de candidatos
+        titulo: 'GOVERNADOR',
+        digitos: 3,
+        candidatos: [
+            {
+                numeros: '123',
+                nome: 'Tiao',
+                partido: 'BLA',
+                fotos: [
+                    { url: '99.jpg', legenda: 'Governador' },
+                    
+                ]
+            },
+            {
+                numeros: '693',
+                nome: 'Gael',
+                partido: 'JUN',
+                fotos: [
+                    { url: '84.jpg', legenda: 'Governador' },
+                    
+                ]
+            }
+        ]
+    },
+
+
+
+    { //etapa de PRESIDENTE com lista de candidatos
         titulo: 'PRESIDENTE',
         digitos: 2,
         candidatos: [
             {
-                numeros: '12',
-                nome: 'Ciro Gomes',
-                partido: 'PDT',
-                vice: 'Cic',
+                numeros: '91',
+                nome: 'Adão',
+                partido: 'FGH',
                 fotos: [
-                    { url: '99.jpg', legenda: 'Prefeito' },
-                    { url: '99_2.jpg', legenda: 'Vice-Prefeito', small: true }
+                    { url: '99.jpg', legenda: 'Presidente' },
+                    
                 ]
             },
             {
-                numeros: '22',
-                nome: 'Bolsonaro',
-                partido: 'PL',
-                vice: 'Zul',
+                numeros: '19',
+                nome: 'Moisés',
+                partido: 'HGF',
                 fotos: [
-                    { url: '84.jpg', legenda: 'Prefeito' },
-                    { url: '84_2.jpg', legenda: 'Vice-Prefeito', small: true }
+                    { url: '84.jpg', legenda: 'Presidente' },
+                    
                 ]
             }
         ]
     }
+
 ]
