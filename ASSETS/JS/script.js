@@ -1,18 +1,20 @@
+ticket = document.querySelector('.tickets');
 let seuVotoPara = document.querySelector('.d-1-1 span');
 let cargo = document.querySelector('.d-1-2 span');
 let descricao = document.querySelector('.d-1-4');
 let aviso = document.querySelector('.d-2');
 let lateral = document.querySelector('.d-1-right');
 let numeros = document.querySelector('.d-1-3');
+let final;
 
 //variaveis de controle de ambiente
 let etapaAtual = 0;
 let numero = '';
 let votoBranco = true;
+let nulo = false;
 let votos = [];
 
 function comecarEtapa() {
-
     let etapa = etapas[etapaAtual];
     let numeroHtml = '';
     numero = '';
@@ -44,6 +46,7 @@ function atualizaInterface() {
         }
     });
 
+
     if (candidato.length > 0) {
         candidato = candidato[0];
         seuVotoPara.style.display = 'block';
@@ -64,6 +67,7 @@ function atualizaInterface() {
         seuVotoPara.style.display = 'block';
         aviso.style.display = 'block';
         descricao.innerHTML = `<div class="aviso--grande pisca">VOTO NULO</div>`
+        nulo = true;
     }
 
 }
@@ -72,6 +76,9 @@ function atualizaInterface() {
 
 function clicou(n) {
     let elNumero = document.querySelector('.numero.pisca');
+    let audioTeclas = new Audio("ASSETS/AUDIO/Sound_teclas.mp3");
+    audioTeclas.play();
+
     if (elNumero !== null) {
         elNumero.innerHTML = n;
         numero = `${numero}${n}`;
@@ -97,6 +104,8 @@ function branco() {
 }
 
 function corrige() {
+    let audioCorrige = new Audio("ASSETS/AUDIO/Sound_corrige.mp3");
+    audioCorrige.play();
     comecarEtapa();
 }
 
@@ -104,34 +113,42 @@ function confirma() {
     let etapa = etapas[etapaAtual];
     let votoConfirmado = false;
 
+
     if (votoBranco === true) {
         votoConfirmado = true;
         votos.push({
             etapa: etapas[etapaAtual].titulo,
-            voto: 'branco',
+            voto: "branco",
+            nomeVoto: "branco"
         })
 
-        console.log("confirmando como Branco");
     } else if (numero.length === etapa.digitos) {
         votoConfirmado = true;
 
-        //filtra i candidato pelo nummero
         let candidato = etapa.candidatos.filter((item) => {
             if (item.numeros === numero) {
+
                 return true;
             } else {
                 return false;
             }
-        })
-        //pega o resultado
-        candidato = candidato[0];
+        });
 
-        votos.push({
-            etapa: etapas[etapaAtual].titulo,
-            voto: numero,
-            pessoa: candidato.nome
-        })
-        console.log("confirmando como " + numero);
+        if (candidato.length > 0) {
+            candidato = candidato[0];
+            votos.push({
+                etapa: etapas[etapaAtual].titulo,
+                voto: numero,
+                nomeVoto: candidato.nome
+            })
+        }
+        if (nulo) {
+            votos.push({
+                etapa: etapas[etapaAtual].titulo,
+                voto: numero,
+                nomeVoto: "nulo"
+            });
+        };
     }
 
     if (votoConfirmado) {
@@ -140,9 +157,21 @@ function confirma() {
             comecarEtapa();
         } else {
             document.querySelector('.tela').innerHTML = `<div class="aviso--gigante pisca">FIM</div>`;
-            console.log(votos);
+            ticket.style.display = "block";
+            for (let i = 0; i < votos.length; i++) {
+                Novoticket = `<div> ${votos[i].etapa} </div><hr> <div>Número: ${votos[i].voto}: </div><div>Nome: ${votos[i].nomeVoto}:</div> <br>`;
+                ticket.innerHTML += Novoticket;
+            }
         }
+        
+        let audioConfirma = new Audio("ASSETS/AUDIO/Sound_confirm.mp3");
+        audioConfirma.play();
     }
 }
+
+function reloaded() {
+    document.location.reload(true);
+}
+function novoVoto() { }
 
 comecarEtapa();

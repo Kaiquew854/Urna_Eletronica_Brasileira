@@ -1,6 +1,6 @@
 let etapas = [
     { //etapa de vereador com lista de candidatos
-        titulo: 'VEREADOR',
+        titulo: 'DEPUTADO',
         digitos: 5,
         candidatos: [
             {
@@ -23,13 +23,13 @@ let etapas = [
     },
 
     { //etapa de prefeito com lista de candidatos
-        titulo: 'PREFEITO',
+        titulo: 'PRESIDENTE',
         digitos: 2,
         candidatos: [
             {
-                numeros: '99',
-                nome: 'Ciclano',
-                partido: 'ABC',
+                numeros: '12',
+                nome: 'Ciro Gomes',
+                partido: 'PDT',
                 vice: 'Cic',
                 fotos: [
                     { url: '99.jpg', legenda: 'Prefeito' },
@@ -37,9 +37,9 @@ let etapas = [
                 ]
             },
             {
-                numeros: '84',
-                nome: 'Zulano',
-                partido: 'QUERTY',
+                numeros: '22',
+                nome: 'Bolsonaro',
+                partido: 'PL',
                 vice: 'Zul',
                 fotos: [
                     { url: '84.jpg', legenda: 'Prefeito' },
