@@ -6,19 +6,25 @@
 
 body {
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .urna {
     background-color: #dbd5c9;
     padding: 30px;
     display: flex;
+    width: 70%;
 }
+
 .tela {
-    width: 500px;
+    width: 50%;
     height: 320px;
     background: linear-gradient(to right, #e8e8e8, #c1c1c1);
     border: 2px solid #555;
@@ -28,7 +34,7 @@ body {
 .teclado {
     margin-left: 30px;
     background-color: #3a3a3a;
-
+    width: 40%;
 }
 
 .teclado--linha{
